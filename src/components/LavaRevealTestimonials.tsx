@@ -68,14 +68,16 @@ export function LavaRevealTestimonials() {
              <VideoTestimonial 
                videoSrc="/videos/snapinsta.com.br-6a10ceca6b633.mp4" 
                thumbnail="/images/2024-07-25.jpg" 
-               patientName="Juliana Santos" 
+               patientName="Ana Carolina" 
                procedure="Lente de Contato e Clareamento" 
+               comment="Agora vocês vão me ver sorrindo em TODOS os vídeos mesmo 🤭✨"
              />
              <VideoTestimonial 
                videoSrc="/videos/snapinsta.com.br-6a10cf9163143.mp4" 
                thumbnail="/images/unnamed.webp" 
-               patientName="Marcos Oliveira" 
-               procedure="Emergência 24h & Extração"
+               patientName="Anna Santos" 
+               procedure="Estética & Restauração"
+               comment="perfeito demais!!! Amando meu novo sorriso, trabalho perfeito"
              />
            </div>
         </div>

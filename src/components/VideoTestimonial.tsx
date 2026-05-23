@@ -7,10 +7,11 @@ interface VideoTestimonialProps {
   thumbnail: string;
   patientName: string;
   procedure: string;
+  comment?: string;
   startTime?: number;
 }
 
-export function VideoTestimonial({ videoSrc, thumbnail, patientName, procedure, startTime = 0 }: VideoTestimonialProps) {
+export function VideoTestimonial({ videoSrc, thumbnail, patientName, procedure, comment, startTime = 0 }: VideoTestimonialProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -96,6 +97,12 @@ export function VideoTestimonial({ videoSrc, thumbnail, patientName, procedure, 
               >
                 {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
               </button>
+
+              {comment && (
+                <div className="absolute bottom-4 left-4 right-4 z-20 bg-[#07090e]/80 backdrop-blur-md p-4 rounded-2xl border border-[#ccb24c]/20">
+                  <p className="text-white text-sm italic">"{comment}"</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
