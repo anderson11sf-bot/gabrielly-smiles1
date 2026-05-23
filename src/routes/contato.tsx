@@ -29,6 +29,21 @@ function ContatoPage() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
+              
+              const formData = new FormData(e.currentTarget);
+              const name = formData.get("name");
+              const email = formData.get("email");
+              const phone = formData.get("phone");
+              const procedure = formData.get("procedure");
+              const date = formData.get("date");
+              const time = formData.get("time");
+              const message = formData.get("message");
+
+              const text = `*Novo Pedido de Agendamento pelo Site!* 🦷✨\n\n*Nome:* ${name}\n*Telefone:* ${phone}\n*E-mail:* ${email}\n*Procedimento de Interesse:* ${procedure}\n*Data Preferida:* ${date || "A combinar"}\n*Horário Preferido:* ${time || "A combinar"}\n*Mensagem:* ${message || "Nenhuma"}`;
+              
+              const encodedText = encodeURIComponent(text);
+              window.open(`https://wa.me/5512997100919?text=${encodedText}`, '_blank');
+              
               setSent(true);
             }}
             className="glass-frosted p-8 space-y-6 rounded-2xl border border-[#ccb24c]/20"
@@ -36,8 +51,8 @@ function ContatoPage() {
             {sent ? (
               <div className="py-16 text-center">
                 <CheckCircle2 className="mx-auto h-16 w-16 text-[#ccb24c]" />
-                <h3 className="mt-6 text-2xl font-bold text-gradient-gold">Pedido enviado!</h3>
-                <p className="mt-3 text-[#a5b5c1] font-medium">Entraremos em contato em breve para confirmar a sua consulta.</p>
+                <h3 className="mt-6 text-2xl font-bold text-gradient-gold">Enviando para o WhatsApp...</h3>
+                <p className="mt-3 text-[#a5b5c1] font-medium">Se a janela do WhatsApp não abriu, por favor, clique no botão de WhatsApp ao lado.</p>
               </div>
             ) : (
               <>
@@ -48,7 +63,7 @@ function ContatoPage() {
                 </div>
                 <div>
                   <label className="text-sm font-bold text-white mb-2 block">Procedimento</label>
-                  <select required className="w-full bg-[#0d121c] border border-[#ccb24c]/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#ccb24c] focus:ring-1 focus:ring-[#ccb24c] text-white">
+                  <select name="procedure" required className="w-full bg-[#0d121c] border border-[#ccb24c]/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#ccb24c] focus:ring-1 focus:ring-[#ccb24c] text-white">
                     <option>Avaliação</option>
                     <option>Clareamento Dental</option>
                     <option>Implantes</option>
@@ -65,10 +80,10 @@ function ContatoPage() {
                 </div>
                 <div>
                   <label className="text-sm font-bold text-white mb-2 block">Mensagem (opcional)</label>
-                  <textarea rows={4} className="w-full bg-[#0d121c] border border-[#ccb24c]/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#ccb24c] focus:ring-1 focus:ring-[#ccb24c] text-white" />
+                  <textarea name="message" rows={4} className="w-full bg-[#0d121c] border border-[#ccb24c]/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#ccb24c] focus:ring-1 focus:ring-[#ccb24c] text-white" />
                 </div>
                 <button type="submit" className="w-full bg-gradient-to-r from-[#ccb24c] to-[#f7d683] text-[#07090e] py-4 rounded-full font-bold hover:scale-[1.02] hover:shadow-[0_15px_30px_rgba(204,178,76,0.35)] transition-all duration-300 shadow-md">
-                  Confirmar agendamento
+                  Enviar para o WhatsApp
                 </button>
               </>
             )}
