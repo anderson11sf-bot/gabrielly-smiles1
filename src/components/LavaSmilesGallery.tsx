@@ -41,7 +41,7 @@ export function LavaSmilesGallery() {
   }, { scope: container });
 
   return (
-    <section ref={container} className="bg-[#0c0f16] relative pt-24 pb-32 border-t border-[#ccb24c]/10">
+    <section ref={container} className="bg-[#0c0f16] relative py-20 border-t border-[#ccb24c]/10">
       
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-accent text-white drop-shadow-xl mb-4">

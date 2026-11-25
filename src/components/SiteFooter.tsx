@@ -3,7 +3,7 @@ import { Instagram, Phone, MapPin, Clock } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[#ccb24c]/20 bg-[#07090e] text-white mt-32 relative overflow-hidden">
+    <footer className="border-t border-[#ccb24c]/20 bg-[#07090e] text-white relative overflow-hidden">
       {/* Footer Ambient glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#ccb24c]/5 rounded-full filter blur-[100px] pointer-events-none" />
 

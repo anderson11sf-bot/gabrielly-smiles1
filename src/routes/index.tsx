@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="bg-[#07090e] text-[#fffffd] overflow-x-hidden relative min-h-screen selection:bg-[#ccb24c] selection:text-[#07090e]">
+    <div className="bg-[#07090e] text-[#fffffd] overflow-x-clip relative min-h-screen selection:bg-[#ccb24c] selection:text-[#07090e]">
       <IntroAnimation />
       <div className="relative z-10">
         <LavaHero />
@@ -55,7 +55,7 @@ const valueProps = [
 
 function ValueProps() {
   return (
-    <section className="bg-transparent py-20 relative z-10">
+    <section className="bg-transparent py-16 md:py-20 relative z-10 border-t border-[#ccb24c]/10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8">
           {valueProps.map(({ icon: Icon, title, text }, i) => (
@@ -84,7 +84,7 @@ function ValueProps() {
 // Biographical Introduction Section for the Doctor
 function DoctorBiography() {
   return (
-    <section className="py-24 bg-gradient-to-b from-[#07090e] to-[#0c0f16] relative z-10 border-t border-b border-[#ccb24c]/10">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-[#07090e] to-[#0c0f16] relative z-10 border-t border-b border-[#ccb24c]/10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <TiltCard className="relative group overflow-hidden rounded-2xl border border-[#ccb24c]/20 shadow-[0_20px_50px_rgba(204,178,76,0.15)]">
@@ -146,7 +146,7 @@ function DoctorBiography() {
 
 function FinalCTA() {
   return (
-    <section className="py-24 bg-[#07090e] relative overflow-hidden z-10 border-t border-[#ccb24c]/10">
+    <section className="py-20 bg-[#07090e] relative overflow-hidden z-10 border-t border-[#ccb24c]/10">
       {/* Dynamic light rays / background effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ccb24c]/5 rounded-full filter blur-[120px] pointer-events-none" />
 
